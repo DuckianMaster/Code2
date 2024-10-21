@@ -6,7 +6,7 @@ namespace linterTest {
   enum KEY {
     POS = 1, NEG = -1
   }
-  const info: any = { text: "bfd ", key: KEY.POS };
+  const info: any = { text: "G`udetmvhsgBncd1", key: KEY.POS };
   console.log(deCrypt(info.text, info.key));
  
   
