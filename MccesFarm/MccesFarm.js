@@ -1,12 +1,10 @@
 "use strict";
-// Base Food Supply
 const foodSupply = {
     grass: 100,
     grains: 100,
     meat: 50,
     junk: 30,
 };
-// Animal Base Class
 class Animal {
     constructor(name, type, sound, foodType, foodAmount) {
         this.name = name;
@@ -15,18 +13,19 @@ class Animal {
         this.foodType = foodType;
         this.foodAmount = foodAmount;
     }
-    // Animal sings its song
     singSong() {
-        return `Old MacDonald had a farm, E-I-E-I-O, and on his farm he had a ${this.type}, E-I-E-I-O, with a ${this.sound}-${this.sound} here and a ${this.sound}-${this.sound} there!`;
+        return `Old MacDonald had a farm, E-I-E-I-O, and on his farm he had a ${this.type}, E-I-E-I-O,
+         with a ${this.sound}-${this.sound} here and a ${this.sound}-${this.sound} there,
+          here a ${this.sound}, there a ${this.sound}, everywhere a ${this.sound}-${this.sound},
+          Old MacDonald had a farm, E-I-E-I-O!`;
     }
-    // Animal consumes food
     eat() {
         if (foodSupply[this.foodType] >= this.foodAmount) {
             foodSupply[this.foodType] -= this.foodAmount;
             return `${this.name} the ${this.type} ate ${this.foodAmount} units of ${this.foodType}.`;
         }
         else {
-            return `Not enough ${this.foodType} for ${this.name} the ${this.type}. Needs restocking!`;
+            return `Not enough ${this.foodType} for ${this.name} the ${this.type}. They gon die!`;
         }
     }
 }
